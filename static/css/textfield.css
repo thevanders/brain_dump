@@ -1,0 +1,21 @@
+textfield {
+
+}
+
+input {
+    width: 100%;
+    border: 0px solid;
+    border-color: transparent;
+    border-top: 1px solid;
+    border-top-color: black;
+    height: 60px;
+}
+
+.entry_label {
+    padding: 10px;
+
+}
+
+*:focus {
+    outline: none;
+}
