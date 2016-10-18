@@ -5,5 +5,5 @@ app_name = 'journal'
 
 urlpatterns = [
     url(r'^$', views.IndexView, name='index_view'),
-    url(r'^entry/', views.EntryView, name="entry_view"),
+    url(r'^add/', views.EntryView, name="entry_view"),
 ]

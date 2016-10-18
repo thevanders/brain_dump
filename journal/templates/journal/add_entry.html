@@ -1,0 +1,39 @@
+{% extends "journal/base.html" %}
+{% block title %}Journal Entry{% endblock %}
+{% block body %}
+<div class="container">
+    <div class="row text-center">
+
+        <form class="form-horizontal" action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}<br>
+
+            <div class="form-group">
+                <h3>{{form.date}}</h3>
+            </div>
+
+            <div class="form-group">
+                {% for entry in form %}
+                    <div class="row">
+                        <div class="text-center entry_label">
+                            {{entry.label}}
+                        </div>
+                        <div class="col-md-0 col-sm-1 col-xs-1">
+                        </div>
+                        <div class="col-md-12 col-sm-10 col-xs-10">
+                            {{entry}}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="form-group">
+                <div class="row text-center" style="padding: 10px">
+                    <input type="submit" class="btn btn-success" name="submit" value="Submit"/>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+{% endblock %}

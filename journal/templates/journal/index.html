@@ -1,8 +1,15 @@
 {% extends "journal/base.html" %}
 {% block body %}
-    {% for entry in journal_entries %}
-        <ul>
-            entry
-        </ul>
-    {% endfor %}
+    <div class="jumbotron">
+
+    </div>
+    <div class="container">
+        <a href=" {% url 'journal:entry_view' %} " class="btn btn-block btn-primary" role="button" aria-disabled="true">Add a Journal Entry</a>
+        {% for entry in journal_entries %}
+            <h3>{{entry.date}}</h3>
+            <p>
+                {{entry}}
+            </p>
+        {% endfor %}
+    </div>
 {% endblock %}

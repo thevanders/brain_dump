@@ -17,5 +17,5 @@ input {
 }
 
 *:focus {
-    outline: none;
+    outline: green;
 }
