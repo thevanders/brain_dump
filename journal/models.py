@@ -18,4 +18,9 @@ class JournalEntry(models.Model):
 
 class DailyImage(models.Model):
     date = models.DateField(auto_now_add=True)
-    image = models.FileField()
+    name = models.CharField(max_length = 1000)
+    image = models.CharField(max_length = 1000)
+    location = models.CharField(max_length = 1000)
+
+    def __str__(self):
+        return str(self.id) + ": " + self.name + ", " + self.location
