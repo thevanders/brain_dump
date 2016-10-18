@@ -15,3 +15,7 @@ class JournalEntry(models.Model):
             return self.brain_dump
         else:
             return self.brain_dump[0:100] + '  ...'
+
+class DailyImage(models.Model):
+    date = models.DateField(auto_now_add=True)
+    image = models.FileField()
