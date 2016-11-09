@@ -5,12 +5,17 @@ from django.core.urlresolvers import reverse
 from .models import *
 from .forms import *
 
+today = datetime.today().strftime("%Y-%m-%d")
+
+
 # Create your views here.
 def IndexView(request):
-    journal_entries = JournalEntry.objects.all()
+    journal_entries = JournalEntry.objects.order_by('-pk')
+    images = DailyImage.objects.get(date=today)
     template = loader.get_template('journal/index.html')
     context = {
-        'journal_entries': journal_entries
+        'journal_entries': journal_entries,
+        'images': images # TODO: if DailyImage is referenced to JournalEntry, do we need this?
     }
     return HttpResponse(template.render(context, request))
 

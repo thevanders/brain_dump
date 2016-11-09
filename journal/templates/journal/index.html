@@ -1,12 +1,20 @@
 {% extends "journal/base.html" %}
+
+{% block header %}{{images.image}}{% endblock header %}
+
 {% block body %}
-    <div class="container">
+
         <a href=" {% url 'journal:entry_view' %} " class="btn btn-block btn-primary" role="button" aria-disabled="true">Add a Journal Entry</a>
         {% for entry in journal_entries %}
-            <h3>{{entry.date}}</h3>
-            <p>
-                {{entry}}
-            </p>
+        <div class="card">
+          <img class="card-img-top" src="{{entry.image.image}}" alt="{{entry.date}}"> <!--TODO: find proper way to display daily image linked to journal entry-->
+          <div class="card-block">
+            <h4 class="card-title">{{entry.date}}</h4>
+            <p class="card-text">{{entry}}.</p>
+            <a href="#" class="btn btn-primary">View your entry</a>
+          </div>
+        </div>
+
         {% endfor %}
-    </div>
+
 {% endblock %}

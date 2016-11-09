@@ -5,4 +5,4 @@ from .models import *
 class JournalEntryForm(ModelForm):
     class Meta:
         model = JournalEntry
-        exclude = ['date']
+        exclude = ['date', 'image']

@@ -11,11 +11,14 @@ def get_image():
     r = resp.json()
     name = r['user']['name']
     image = r['urls']['full']
-    if r['location']['city'] is None:
-        location = r['location']['country']
+    if 'location' in r:
+        if r['location']['city'] is None:
+            location = r['location']['country']
+        else:
+            location = "{}, {}".format(r['location']['city'], r['location']['country'])
+        x = [name, image, location]
     else:
-        location = "{}, {}".format(r['location']['city'], r['location']['country'])
-    x = [name, image, location]
+        x = [name, image]
     return x
 
 def new_daily_image():
@@ -23,7 +26,8 @@ def new_daily_image():
     fetch_image = get_image()
     new_image.name = fetch_image[0]
     new_image.image = fetch_image[1]
-    new_image.location = fetch_image[2]
+    if len(fetch_image) == 3:
+        new_image.location = fetch_image[2]
     new_image.save()
 
 
@@ -58,14 +62,14 @@ def new_daily_image():
         'small': 'https://images.unsplash.com/profile-1459116744182-63b6987fad08?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=32&w=32&s=d27a379ca47ed5cd977caf7940736ef0'
         }
     },
-    'exif': {
-        'exposure_time': '0.016666666666666666',
-        'focal_length': '28',
-        'make': 'SONY',
-        'iso': 125,
-        'model': 'ILCE-7M2',
-        'aperture': '4.970854'
-        },
+'exif': {
+    'exposure_time': '0.016666666666666666',
+    'focal_length': '28',
+    'make': 'SONY',
+    'iso': 125,
+    'model': 'ILCE-7M2',
+    'aperture': '4.970854'
+    },
     'links': {
     'self': 'https://api.unsplash.com/photos/tTBWN0wpg94',
     'download': 'http://unsplash.com/photos/tTBWN0wpg94/download',
@@ -92,8 +96,7 @@ def new_daily_image():
         'longitude': 7.56450708360592,
         'latitude': 46.7232919789662
         },
-    'country':
-    'Switzerland',
+    'country': 'Switzerland',
     'city': 'Höfen'
     }
 }
