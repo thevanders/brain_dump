@@ -12,7 +12,7 @@ class DailyImage(models.Model):
     location = models.CharField(max_length = 1000)
 
     def __str__(self):
-        return str(self.id) + ": " + self.name + ", " + self.location # TODO: if no location, do not include ", " after name
+        return str(self.date) + ": " + self.name + ", " + self.location
 
 class JournalEntry(models.Model):
     date = models.DateField(auto_now_add=True)
@@ -22,7 +22,7 @@ class JournalEntry(models.Model):
     today_better = models.CharField(max_length = 500)
     wish_change = models.CharField(max_length = 500)
     brain_dump = models.CharField(max_length = 5000)
-    image = models.ForeignKey(DailyImage, to_field='date', default=today) # TODO: find proper way to link journalentry to DailyImage. error when using default: requires input to be YYYY-MM-DD. currently using datetime.date(YYY-MM-DD)
+    image = models.ForeignKey(DailyImage, to_field='date', default=today)
 
     def __str__(self):
         if len(self.brain_dump) < 100:

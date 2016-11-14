@@ -12,10 +12,15 @@ today = datetime.today().strftime("%Y-%m-%d")
 def IndexView(request):
     journal_entries = JournalEntry.objects.order_by('-pk')
     images = DailyImage.objects.get(date=today)
+    if images.location:
+        name = images.name + ", " + images.location
+    else:
+        name = images.name
     template = loader.get_template('journal/index.html')
     context = {
         'journal_entries': journal_entries,
-        'images': images # TODO: if DailyImage is referenced to JournalEntry, do we need this?
+        'images': images,
+        'name': name
     }
     return HttpResponse(template.render(context, request))
 

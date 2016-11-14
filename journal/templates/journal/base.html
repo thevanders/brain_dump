@@ -15,22 +15,24 @@
     <body>
         <!--Header Image-->
         <div class="container-fluid image-header" id="header" style="background: url('{% block header %}{% endblock header %}') no-repeat center center; background-size: cover; background-attachment: fixed;">
-            <!--img src="http://www.hdwallpapersfree.eu/walls/mountain-reflection-wide.jpg" class="img-responsive" alt="" /--> <!-- TODO: change to {{ DailyImage.image.url}} TODO: try using background img vs actual img-->
         </div>
         <div class="container-fluid image-header-quote">
             <div>
                 <h1>"This is a famous quote"</h1>
                 <h3>Thomas Edison</h3>
+                {% block entry-button %}{% endblock entry-button %}
             </div>
             <div class="row photograph-info">
-                <p>Mark van der Maas: London, United Kingdom</p>
+                <p>{% block photo-meta %}{% endblock photo-meta %}</p>
             </div>
         </div>
 
         <!--Main body-->
+            <div class="container col-md-2 col-sm-1">
 
-            <div class="container-fluid body col-md-12 col-sm-12">
-                <div class="container col-md-8 col-lg-8 col-xs-10 ">
+            </div>
+            <div class="container-fluid body col-md-8 col-sm-10">
+                <div class="container-fluid">
                     {% block body %}
 
                     {% endblock %}
