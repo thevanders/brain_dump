@@ -25,7 +25,10 @@ SECRET_KEY = 'ho6xtfc%$4ncaq_0in4y^51q_-mj00gwa4-qkoq8(ew^)#&di-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'fierce-fortress-85675.herokuapp.com'
+
+]
 
 
 # Application definition
