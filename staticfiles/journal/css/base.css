@@ -1,0 +1,107 @@
+
+* {
+    font-family: Helvetica;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+
+/* Journal Entry Page*/
+input {
+    width: 100%;
+    border: 0px solid;
+    border-color: transparent;
+    border-top: 1px solid;
+    border-top-color: black;
+    height: 60px;
+}
+
+.entry_label {
+    padding: 10px;
+
+}
+
+*:focus {
+
+}
+
+
+textfield {
+
+}
+
+/* Header */
+
+.container-fluid.image-header {
+    min-height: 100vh;
+}
+
+.container-fluid.image-header-quote {
+    position: absolute;
+    width: 100%;
+    top: 30vh;
+    text-align: center;
+    color: white;
+    text-shadow: 0px 0px 20px black;
+}
+
+.photograph-info {
+    right: 30px;
+    text-align: right;
+    color: rgb(219, 219, 219);
+    text-shadow: None;
+    position: absolute;
+    top: 60vh;
+}
+
+.icon-stack {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+.icon-stack .glyphicon {
+    position: absolute;
+    color: white;
+    font-size: 50px;
+}
+
+.icon-stack .glyphicon .glyphicon-plus {
+    text-align: center;
+}
+
+/*Index*/
+.container-fluid.body {
+    padding: 0px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-radius: 3px 3px 0px 0px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(238, 238, 238, 0.5);
+
+}
+
+/*cards*/
+
+.card-block {
+    margin-top: 85px;
+    position: relative;
+    text-align: center;
+    color: white;
+    text-shadow: 0px 0px 20px black;
+}
+
+.card {
+    margin-top: 30px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(227, 227, 227);
+    border-radius: 3px;
+    height: 250px;
+}
