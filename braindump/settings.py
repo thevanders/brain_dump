@@ -26,8 +26,8 @@ SECRET_KEY = 'ho6xtfc%$4ncaq_0in4y^51q_-mj00gwa4-qkoq8(ew^)#&di-'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'fierce-fortress-85675.herokuapp.com'
-
+    'fierce-fortress-85675.herokuapp.com',
+    '127.0.0.1'
 ]
 
 

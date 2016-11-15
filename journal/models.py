@@ -12,7 +12,7 @@ class DailyImage(models.Model):
     location = models.CharField(max_length = 1000)
 
     def __str__(self):
-        return self.name + ", " + self.location #originally str(self.date)
+        return str(self.date) + ": " + self.name + ", " + self.location #originally str(self.date)
 
 class JournalEntry(models.Model):
     date = models.DateField(auto_now_add=True)
