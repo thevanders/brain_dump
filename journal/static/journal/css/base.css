@@ -7,9 +7,14 @@ h1 {
     font-size: 50px;
 }
 
+a {
+    text-decoration: none;
+}
+
 a:hover {
     text-decoration: none;
 }
+
 
 
 /* Journal Entry Page*/
@@ -68,11 +73,11 @@ textfield {
 .icon-stack .glyphicon {
     position: absolute;
     color: white;
-    font-size: 50px;
 }
 
 .icon-stack .glyphicon .glyphicon-plus {
     text-align: center;
+    font-seize: 30px;
 }
 
 /*Index*/

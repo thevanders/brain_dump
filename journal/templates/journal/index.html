@@ -4,9 +4,11 @@
 {% block photo-meta %}{{name}}{% endblock photo-meta %}
 {% block entry-button %}
     <a href=" {% url 'journal:entry_view' %} " >
-        <span class="icon-stack">
-        <i class="glyphicon glyphicon-unchecked"></i>
-        <i class="glyphicon glyphicon-plus"></i>
+        <h2 class="card-title">
+            {{today}}<span class="icon-stack">
+            <i class="glyphicon glyphicon-plus"></i>
+        </h2>
+
    </span>
     </a>
 {% endblock entry-button %}

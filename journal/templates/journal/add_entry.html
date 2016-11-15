@@ -1,5 +1,7 @@
 {% extends "journal/base.html" %}
 {% block title %}Journal Entry{% endblock %}
+{% block header %}{{images.image}}{% endblock header %}
+{% block photo-meta %}{{name}}{% endblock photo-meta %}
 {% block body %}
     <div class="row text-center">
 
@@ -7,7 +9,7 @@
             {% csrf_token %}<br>
 
             <div class="form-group">
-                <h3>{{form.date}}</h3>
+                <h3>{{today}}</h3>
             </div>
 
             <div class="form-group">
